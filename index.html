@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Samit</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.1s ease, color 0.1s ease;
+        }
+        #flashingText {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="flashingText">Samit</div>
+
+    <script>
+        let isBlackBackground = true;
+        const flashTextElement = document.getElementById('flashingText');
+
+        function flashText() {
+            if (isBlackBackground) {
+                document.body.style.backgroundColor = 'black';
+                flashTextElement.style.color = 'white';
+            } else {
+                document.body.style.backgroundColor = 'white';
+                flashTextElement.style.color = 'black';
+            }
+            isBlackBackground = !isBlackBackground;
+        }
+
+        // Flash every 0.5 seconds (adjust time for faster or slower flashing)
+        setInterval(flashText, 500);
+    </script>
+</body>
+</html>
